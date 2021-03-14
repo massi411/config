@@ -1,0 +1,45 @@
+;;ユーザー情報
+(setq user-full-name "Takushima")
+
+;; 環境を日本語、UTF-8にする
+(set-locale-environment nil)
+(set-language-environment "Japanese")
+(setq prefer-coding-system 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(set-buffer-file-coding-system 'utf-8)
+(setq default-buffer-file-coding-system 'utf-8)
+(set-default-coding-systems 'utf-8)
+(prefer-coding-system 'utf-8)
+
+;; バックアップファイルを作成させない
+(setq make-backup-files nil)
+
+;; スタートアップメッセージを表示させない
+(setq inhibit-startup-message t)
+
+;; 列数を表示する
+(column-number-mode t)
+
+;; 行数を表示する
+(global-linum-mode t)
+
+;; 対応する括弧を光らせる
+(show-paren-mode 1)
+
+;; 行ハイライト
+(when window-system (global-hl-line-mode +1))
+
+;; 物理行移動
+(setq line-move-visual nil)
+
+;; タブ
+(setq default-tab-width 4)
+
+;;;;;;; インデントして、次の行に移動する
+(defun indent-and-next-line ()
+  (interactive)
+  (indent-according-to-mode)
+  (next-line 1))
+
+
